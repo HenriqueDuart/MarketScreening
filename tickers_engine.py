@@ -7,7 +7,6 @@ load_dotenv()
 DICT_LOC='./Exchanges/Country_dict.json'
 ALL_TICKERS_LOC='./Tickers/All_tickers.json'
 
-
 # Load the existing dictionary with all venues
 with open(DICT_LOC, mode="r", encoding="utf-8") as file:
     country_dict = json.load(file)
@@ -34,7 +33,7 @@ def all_tickers_dict_generator(input_dict):
             else:
                 tickers_dict[country][venue]=tickers_list
 
-    print('Retrieved all tickers for all venues')
+    print('Retrieved all tickers for all venues.')
     with open(ALL_TICKERS_LOC, mode='w', encoding="utf-8") as file:
         json.dump(tickers_dict, file, indent=4)
         print('File saved.')

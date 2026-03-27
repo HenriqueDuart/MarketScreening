@@ -62,6 +62,3 @@ exchange_dict = transform_exchange_list(exchange_list)
 
 print('The program run successfully.')
 
-# To extract the exchange tickers available for a given exchange
-# TICKERS_ENDPOINT = f'https://eodhd.com/api/exchange-symbol-list/{EXCHANGE_SYMBOL}?api_token={API_TOKEN}&fmt=json'
-
