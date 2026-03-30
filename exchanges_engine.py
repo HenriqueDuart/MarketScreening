@@ -7,14 +7,13 @@ load_dotenv()
 
 # Variables
 API_TOKEN = os.getenv('API_TOKEN')
-EXCHANGE_FILE = "./Exchanges/Exchanges.json"
-COUNTRY_DICT = './Exchanges/Country_dict.json'
+EXCHANGE_FILE = "./Outputs/Exchanges/Raw_exchanges.json"
+COUNTRY_DICT = './Outputs/Exchanges/World_venues.json'
 
 def get_exchanges():
     """ Retrieves all available exchanges venues in EODHD, and their respective codes. It returns a list, and saves the same information in a .txt file. """
     exchanges_endpoint = f'https://eodhd.com/api/exchanges-list/?api_token={API_TOKEN}&fmt=json'
     trading_venue_list = requests.get(url=exchanges_endpoint).json()
-
 
     with open(EXCHANGE_FILE, mode="w", encoding="utf-8") as file:
         print(f'Exchange list retrieved. Saving information into {EXCHANGE_FILE} file...')
@@ -25,9 +24,7 @@ def get_exchanges():
 
 def transform_exchange_list(input_list):
     """ Create a new dict, in the desired format. Dict is organized per country, each subdict containing lists of different elements, e.g. exchange codes, etc."""
-
     country_dict = {}
-
     # Create / populate the new dictionary
     print('Creating new dictionary. Formatting...')
     for item in input_list:

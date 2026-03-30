@@ -4,13 +4,12 @@ import requests
 import json
 
 load_dotenv()
-DICT_LOC='./Exchanges/Country_dict.json'
-ALL_TICKERS_LOC='./Tickers/All_tickers.json'
+WORLD_VENUES= './Outputs/Exchanges/World_venues.json'
+ALL_TICKERS_LOC='./Outputs/Tickers/World_tickers.json'
 
 # Load the existing dictionary with all venues
-with open(DICT_LOC, mode="r", encoding="utf-8") as file:
+with open(WORLD_VENUES, mode="r", encoding="utf-8") as file:
     country_dict = json.load(file)
-
 
 def all_tickers_dict_generator(input_dict):
     parameters={
