@@ -30,7 +30,7 @@ FILTER_TIMESERIES = (
     "Financials::Income_Statement::quarterly"
 )
 # Countries that will be covered in the extract
-selected_country_list=['Portugal']
+selected_country_list=['Brazil']
 
 with open('Outputs/Tickers/World_tickers.json', mode='r', encoding='utf-8') as file:
     # Loading the list of all available tickers per country
